@@ -9,8 +9,7 @@ module.exports = {
 function index(req, res) {
     Movie.find({}, function(err, movies) {
         console.log(movies)
-        if (!err) res.render('movies/index', { movies })
-        res.redirect('/')
+        res.render('movies/index', { movies })
     })
 }
 
@@ -31,7 +30,7 @@ function create(req, res) {
         if (err) console.log(err)
         if (err) return res.redirect('/movies/new')
         console.log(movie)
-        res.redirect('/movies/new')
+        res.redirect('/movies')
     })
 
 }
