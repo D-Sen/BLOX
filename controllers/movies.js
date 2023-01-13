@@ -1,8 +1,17 @@
 const Movie = require('../models/movie')
 
 module.exports = {
+    index,
     new: newMovie,
-    create
+    create,
+}
+
+function index(req, res) {
+    Movie.find({}, function(err, movies) {
+        console.log(movies)
+        if (!err) res.render('movies/index', { movies })
+        res.redirect('/')
+    })
 }
 
 function newMovie(req, res) {
