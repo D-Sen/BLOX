@@ -1,22 +1,27 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
+// Shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
-    title: {
-        type: String,
-        required: true
-      },
-    releaseYear: { 
-        type: Number, 
-        default: function() {
-           return new Date().getFullYear();
-        }
+  title: {
+    type: String,
+    required: true
+  },
+  releaseYear: {
+    type: Number,
+    default: function() {
+      return new Date().getFullYear();
     },
-    mpaaRating: String,
-    cast: [String],
-    nowShowing: {type: Boolean, default: false},
+    min: 1927
+  },
+  mpaaRating: {
+    type: String,
+    enum: ['G', 'PG', 'PG-13', 'R']
+  },
+  cast: [String],
+  nowShowing: {type: Boolean, default: false}
 }, {
-    timestamps: true
-})
+  timestamps: true
+});
 
-module.exports = mongoose.model("Movie", movieSchema)
+module.exports = mongoose.model('Movie', movieSchema);
