@@ -35,6 +35,9 @@ function create(req, res) {
     if (req.body[key] === '') delete req.body[key];
   }
   // One way to create data using a mongoose model
+  // Movie.create(req.body, function(err, newMovie) {
+  //   // functionality to run after movie has been created
+  // })
   const movie = new Movie(req.body);
   movie.save(function(err) {
     if (err) return res.redirect('/movies/new');
