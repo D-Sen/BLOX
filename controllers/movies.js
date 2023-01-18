@@ -14,9 +14,11 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Movie.findById(req.params.id, function(err, movie) {
-    res.render('movies/show', { title: 'Movie Detail', movie });
-  });
+  Movie.findById(req.params.id)
+    .populate('cast')
+    .exec(function(err, movie) {
+      res.render('movies/show', { title: 'Movie Detail', movie });
+    });
 }
 
 function newMovie(req, res) {
@@ -26,10 +28,6 @@ function newMovie(req, res) {
 function create(req, res) {
   // Convert nowShowing's checkbox of nothing or "on" to boolean
   req.body.nowShowing = !!req.body.nowShowing;
-  // Remove leading/trailing spaces
-  req.body.cast = req.body.cast.trim();
-  // Split if it's not an empty string
-  if (req.body.cast) req.body.cast = req.body.cast.split(/\s*,\s*/);
   // Delete empty properties on req.body for defaults to happen 
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
@@ -42,6 +40,6 @@ function create(req, res) {
   movie.save(function(err) {
     if (err) return res.redirect('/movies/new');
     console.log(movie);
-    res.redirect('/movies');
+    res.redirect(`/movies/${movie._id}`);
   });
 }

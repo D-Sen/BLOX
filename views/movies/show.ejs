@@ -7,10 +7,15 @@
   <div><%= movie.releaseYear %></div>
   <div>Rating: </div>
   <div><%= movie.mpaaRating %></div>
-  <div>Cast: </div>
-  <div><%= movie.cast.join(', ') %></div>
   <div>Now Showing: </div>
   <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+  <!-- start cast list -->
+  <div>Cast:</div>
+  <ul>
+    <%- movie.cast.map(p => 
+      `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
+    ).join('') %>
+  </ul>
 </section>
 <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
@@ -38,14 +43,24 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Yep, we can define variables! -->
+      <% let total = 0 %>
       <% movie.reviews.forEach(function(r) { %>
+        <!-- Accumulate the total rating -->
+        <% total += r.rating %>
         <tr>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
         </tr>
       <% }); %>
+      <!-- Add a row to display the avg AFTER the forEach iteration  -->
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / movie.reviews.length).toFixed(1) %></strong></td>
+      </tr>
     </tbody>
+    
   </table>
 <% } else { %>
   <h5>No Reviews Yet</h5>
