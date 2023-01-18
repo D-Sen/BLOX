@@ -4,12 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-require('dotenv').config()
+// Load the "secrets" in the .env file
+require('dotenv').config();
+// Connect to the MongoDB database
 require('./config/database');
 
 var indexRouter = require('./routes/index');
 var moviesRouter = require('./routes/movies');
-const reviewsRouter = require('./routes/reviews')
+var reviewsRouter = require('./routes/reviews');
+var performersRouter = require('./routes/performers');
 
 var app = express();
 
@@ -25,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/movies', moviesRouter);
-app.use('/', reviewsRouter)
+// Cannot use /reviews as a starts with path because many of the 
+// proper routes start with /movies
+app.use('/', reviewsRouter);
+app.use('/', performersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
