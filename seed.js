@@ -1,36 +1,49 @@
-// const p = new Promise(function(resolve, reject) {
-//    setTimeout(function() {
-//     resolve('Something went right!')
-//    }, 2000)
-// })
+require('dotenv').config()
+require('./config/database');
 
-// p.then(function(result) {
-//     console.log(result);
-//     return 42;
-//   }).then(function(result) {
-//     console.log(result);
-//     return 'Done!'
-//   }).then(function(result) {
-//     console.log(result);
-//   });
+const Movie = require('./models/movie')
+const Performer = require('./models/performer')
 
-function asyncAdd(a, b, delay) {
-    return new Promise(function(resolve) {
-        setTimeout(function() {
-            resolve(a + b)
-        }, delay)
-    })
-}
+const data = require('./data')
 
-asyncAdd(5, 10, 2000)
-    .then(function(sum) { //the argument in the callback function passed to .then() is always the resolved value of the promise
-        console.log(sum)
-        return asyncAdd(sum, 100, 1000)
+const p1 = Movie.deleteMany({})
+const p2 = Performer.deleteMany({})
+
+Promise.all([p1, p2])
+    .then(function(results) {
+        console.log(results)
+        return Performer.create(data.performers)
     })
-    .then(function(sum) {
-        console.log(sum)
-        return asyncAdd(sum, 1000, 2000)
+    .then(function(performers) {
+        console.log(performers)
+        return Movie.create(data.movies)
     })
-    .then(function(sum) {
-        console.log(sum)
+    .then(function(movies) {
+        console.log(movies)
+        return Promise.all([
+            Performer.findOne({name: "Mark Hamill"}),
+            Movie.findOne({title: 'Star Wars - A New Hope'})
+        ])
     })
+    .then(function(results) {
+        const mark = results[0]
+        const starWars = results[1]
+        starWars.cast.push(mark._id)
+        return starWars.save()
+    })
+    .then(function(results) {
+        console.log(results)
+        process.exit()
+    })
+
+// Movie.deleteMany({})
+//     .then(function(results) {
+//         console.log('Deleted movies: ', results)
+//         return Performer.deleteMany({})
+//     })
+//     .then(function(results) {
+//         console.log('Deleted performers: ', results)
+//     })
+//     .then(function() {
+//         process.exit()
+//     })
