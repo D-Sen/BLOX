@@ -17,9 +17,9 @@ let performer, performers;
 // Movie.find({}).then(console.log('found movies'));
 
 // console.log('Time to CRUD!');
-Movie.updateMany(
-    {},  // Query object determines which docs to update
-    {cast: []},  // Update object has properties to update
-    function(err, result) {console.log(result)}
-);
+// Movie.updateMany(
+//     {},  // Query object determines which docs to update
+//     {cast: []},  // Update object has properties to update
+//     function(err, result) {console.log(result)}
+// );
   
