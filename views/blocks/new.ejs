@@ -1,13 +1,18 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Movie</h2>
-<form action="/movies" method="POST">
-  <label>Title:
-    <input type="text" name="title">
+<h2>Create a New Block</h2>
+<form action="/blocks" method="POST">
+  <label>Color - Red (0-255):
+    <input type="number" name="colorRed">
   </label><br>
-  <label>Release Year:
-    <input type="number" name="releaseYear">
+  <label>Color - Green (0-255):
+    <input type="number" name="colorGreen">
   </label><br>
+  <label>Color - Blue (0-255):
+    <input type="number" name="colorBlue">
+  </label><br>
+
+<!--
   <label>MPAA Rating
     <select name="mpaaRating">
       <option value="G">G</option>
@@ -16,10 +21,12 @@
       <option value="R">R</option>
     </select>
   </label><br>
+
   <label>Now Showing:
     <input type="checkbox" name="nowShowing" checked>
   </label><br>
-  <button type="submit">Add Movie</button>
+-->
+  <button type="submit">Add Block</button>
 </form>
 
 <%- include('../partials/footer') %>

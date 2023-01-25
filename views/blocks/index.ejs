@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>colorRed</th>
+      <th>colorGreen</th>
+      <th>colorBlue</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% blocks.forEach(function(b) { %>
+      <tr>
+        <td><%= b.colorRed %></td>
+        <td><%= b.colorGreen %></td>
+        <td><%= b.colorBlue %></td>
+
+        <td><a href="/blocks/<%= b._id %>">MESSAGES</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>

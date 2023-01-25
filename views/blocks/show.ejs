@@ -1,0 +1,55 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Red Value: </div>
+  <div><%= block.colorRed %></div>
+  <div>Green Value: </div>
+  <div><%= block.colorGreen %></div>
+  <div>Blue Value: </div>
+  <div><%= block.colorBlue %></div>
+</section>
+<br><br><h2>Messages</h2>
+<% if(user) { %>
+  <form id="add-message-form" method="POST"
+    action="/blocks/<%= block._id %>/messages">
+    <label>Content:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Message">
+  </form>
+<% } %>
+
+
+<% if (block.messages.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Content</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% block.messages.forEach(function(r) { %>
+        <tr>
+          <td class="message-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td>
+            <% if (user?._id.equals(r.user)) { %>
+              <form action="/messages/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<% } else { %>
+  <h5>No Messages Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>

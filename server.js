@@ -14,9 +14,9 @@ require('./config/database');
 require('./config/passport')
 
 var indexRouter = require('./routes/index');
-var moviesRouter = require('./routes/movies');
-var reviewsRouter = require('./routes/reviews');
-var performersRouter = require('./routes/performers');
+
+const blocksRouter = require('./routes/blocks');
+const messagesRouter = require('./routes/messages');
 
 var app = express();
 
@@ -45,11 +45,11 @@ app.use(function(req, res, next) {
 })
 
 app.use('/', indexRouter);
-app.use('/movies', moviesRouter);
+app.use('/blocks', blocksRouter);
+app.use('/', messagesRouter);
+
 // Cannot use /reviews as a starts with path because many of the 
 // proper routes start with /movies
-app.use('/', reviewsRouter);
-app.use('/', performersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
