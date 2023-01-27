@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Create a New Block</h2>
-<form action="/blocks" method="POST">
+<form action="/blocks/<%= block._id %>?_method=PUT" method="POST" autocomplete="off">
   <label>Color - Red (0-255):
     <input type="number" name="colorRed">
   </label><br>
@@ -11,7 +11,7 @@
   <label>Color - Blue (0-255):
     <input type="number" name="colorBlue">
   </label><br>
-  <button type="submit">Add Block</button>
+  <button type="submit">Update Block</button>
 </form>
 
 <%- include('../partials/footer') %>

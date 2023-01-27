@@ -9,13 +9,12 @@
 </head>
 <body>
   <nav>
-    <img src="/images/camera.svg">
     <a href="/blocks" <%- title === 'All Blocks' ? 'class="active"' : '' %>>ALL BLOCKS</a>
     <% if (user) { %>
       <a href="/blocks/new" <%- title === 'Add Block' ? 'class="active"' : '' %>>ADD BLOCK</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <a href="/auth/google" class="login">LOG IN</a>
     <% } %>
   </nav>
   

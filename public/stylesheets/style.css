@@ -16,19 +16,21 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: white;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
-}
+  border: 2px black auto;
 
+}
+/*
 nav > img {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
 }
-
+*/
 body > main {
   grid-area: main;
   display: flex;
@@ -51,12 +53,12 @@ nav > a {
 }
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #424748;
+  color: black;
+  /* background-color: #424748; */
 }
 
 nav > a.active {
-  color: white;
+  color: gray;
   cursor: default;
 }
 
@@ -64,8 +66,12 @@ nav > a.active {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
-}
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
 
+}
+/*
 #new-form *,
 #add-review-form *,
 #add-performer-form * {
@@ -73,7 +79,7 @@ nav > a.active {
   padding: 5px;
   border-radius: 5px;
 }
-
+*/
 #new-form input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
@@ -120,6 +126,7 @@ table td {
   font-weight: bold;
 }
 
+#add-message-form,
 #add-review-form,
 #add-performer-form {
   display: grid;
@@ -128,6 +135,7 @@ table td {
   margin-bottom: 2rem;
 }
 
+#add-message-form input[type="submit"],
 #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"]  {
   width: 10rem;
