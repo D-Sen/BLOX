@@ -1,13 +1,12 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
+<section id="show-page" class="other-page">
   <div>Red Value: </div>
   <div><%= block.colorRed %></div>
   <div>Green Value: </div>
   <div><%= block.colorGreen %></div>
   <div>Blue Value: </div>
   <div><%= block.colorBlue %></div>
-</section>
 <a href="/blocks/<%= block._id %>/edit">Update</a></td>
 <br><br><h2>Messages</h2>
 <% if(user) { %>
@@ -31,10 +30,9 @@
       </tr>
     </thead>
     <tbody>
-      <% let total = 0 %>
       <% block.messages.forEach(function(r) { %>
         <tr>
-          <td class="message-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td class="message-user"><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td>
@@ -52,5 +50,5 @@
 <% } else { %>
   <h5>No Messages Yet</h5>
 <% } %>
-  
+  </section>
 <%- include('../partials/footer') %>

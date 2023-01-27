@@ -1,14 +1,13 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
 }
 
 body {
   margin: 0;
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px repeat(auto-fill, 100px);  /* 1fr */
   grid-template-areas: 
     "nav"
     "main"
@@ -22,8 +21,26 @@ body > nav {
   align-items: center;
   padding: 0 20px 0 30px;
   border: 2px black auto;
+  color: #424748;
 
 }
+
+/* NEW */
+/* */
+body > main {
+  grid-area: main;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+
 /*
 nav > img {
   width: 34px;
@@ -31,7 +48,20 @@ nav > img {
   margin-right: auto;
 }
 */
-body > main {
+.color-block {
+  width: 100px;
+  height: 100px;
+    font-family: cursive, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bolder;
+}
+
+a {
+    text-decoration: none; /* no underline */
+}
+
+.other-page {
+/* body > main { */
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -126,18 +156,14 @@ table td {
   font-weight: bold;
 }
 
-#add-message-form,
-#add-review-form,
-#add-performer-form {
+#add-message-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
 
-#add-message-form input[type="submit"],
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
+#add-message-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
