@@ -15,7 +15,6 @@ function update(req, res, next) {
         colorGreen: req.body.colorGreen,
         colorBlue: req.body.colorBlue
     }
-    console.log('about to do a lot');
     Block.findByIdAndUpdate(req.params.id, updateBlock, { new: true}, function(err, block){
         if (err) {return next(err);} 
         res.redirect(`/blocks/${block._id}`);
@@ -50,7 +49,7 @@ function newBlock(req, res) {
 }
 
 function create(req, res) {
-// Delete empty properties on req.body for defaults to happen
+    // Delete empty properties on req.body for defaults to happen
     for (let key in req.body) {
         if (req.body[key] === "") delete req.body[key];
     }
