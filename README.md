@@ -10,7 +10,7 @@ BLOX - working title - is a CRUD example app that lets you create colored blocks
 
 ## Screenshot(s): 
 
-![Screenshot of board](http://www.sampleurl.com/logo.png) 
+!(https://github.com/D-Sen/proj2-blox/blob/main/Screenshot-1.png) 
 
 ## Technologies Used: 
 * JavaScript (Node)
