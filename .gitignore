@@ -1,0 +1,7 @@
+# ignore ALL .log files
+*.log
+*.env
+todo-done.txt
+
+# ignore ALL files in ANY directory named temp
+my_project_files/ 

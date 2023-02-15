@@ -1,34 +1,26 @@
 <%- include('../partials/header') %>
 
 <section id="show-page" class="other-page">
-<div class="color-block" style="background-color: rgb(<%= block.colorRed  %>, <%= block.colorGreen  %>, <%= block.colorBlue  %>); color:<%= block.colorText %>;">
-<% if (block.messages.length) { %>
-        <center><%= block.messages[0].content %>
-        </center>
-    <% } %>
-</div>
-  <div>Red Value: <%= block.colorRed %><br>
-  Green Value: <%= block.colorGreen %><br>
-  Blue Value: <%= block.colorBlue %><br>
-  Text Color: <%= block.colorText %><br>
-<br>
-<a href="/blocks/<%= block._id %>/edit">Change Block Colors</a><br>
-</div>
-
-
-<div>
-<h2>Messages</h2>
-<p><i>Only the top-most message will appear in the main block page!</i></p>
-
+  <div>Red Value: </div>
+  <div><%= block.colorRed %></div>
+  <div>Green Value: </div>
+  <div><%= block.colorGreen %></div>
+  <div>Blue Value: </div>
+  <div><%= block.colorBlue %></div>
+  <div>Text Color: </div>
+  <div><%= block.colorText %></div>
+<a href="/blocks/<%= block._id %>/edit">Change Block Colors</a></td>
+<br><br><h2>Messages</h2>
 <% if(user) { %>
   <form id="add-message-form" method="POST"
     action="/blocks/<%= block._id %>/messages">
-    <label></label>&nbsp;
-    <textarea name="content"></textarea>&nbsp;
+    <label>Message:</label>
+    <textarea name="content"></textarea>
     <input type="submit" value="Add Message">
   </form>
 <% } %>
-<br><br>
+<div class="color-block" style="background-color: rgb(<%= block.colorRed  %>, <%= block.colorGreen  %>, <%= block.colorBlue  %>); color:<%= block.colorText %>;">Place<br>holder<br>text</div>
+
 
 
 <% if (block.messages.length) { %>
@@ -37,8 +29,8 @@
       <tr>
         <th>User</th>
         <th>Date</th>
-        <th>Message</th>
-        <th>Delete?</th>
+        <th>Content</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -62,6 +54,5 @@
 <% } else { %>
   <h5>No Messages Yet</h5>
 <% } %>
-</div>
   </section>
 <%- include('../partials/footer') %>

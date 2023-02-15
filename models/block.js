@@ -37,6 +37,11 @@ const blockSchema = new Schema({
     max: 255,
     default: 0
   },
+  colorText: {
+    type: String,
+    enum: ['white', 'black'],
+    default: 'white'
+  },
   messages: [messageSchema]
 }, {
   timestamps: true

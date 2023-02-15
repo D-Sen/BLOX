@@ -1,18 +1,16 @@
 <%- include('../partials/header') %>
 <!-- <section id="index-page"> -->
-    <% blocks.forEach(function(b) { %>
-<a href="/blocks/<%= b._id %>">
-<div class="color-block" style="background-color: rgb(<%= b.colorRed  %>, <%= b.colorGreen  %>, <%= b.colorBlue  %>)">
-<% if (b.messages.length) { %>
-<center><%= b.messages[0].content %>
-</center>
-<% } %>
-
+<% blocks.forEach(function(b) { %>
+    <a href="/blocks/<%= b._id %>">
+    <div class="color-block" style="background-color: rgb(<%= b.colorRed  %>, <%= b.colorGreen  %>, <%= b.colorBlue  %>); color:<%= b.colorText %>;">
+    <% if (b.messages.length) { %>
+        <center><%= b.messages[0].content %>
+        </center>
+    <% } %>
     </div>
-</a>
+    </a>
+<% }); %>
 
-      <% }); %>
-
-</section>
+<!-- </section> -->
   
 <%- include('../partials/footer') %>

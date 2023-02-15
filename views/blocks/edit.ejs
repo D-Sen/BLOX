@@ -1,17 +1,22 @@
 <%- include('../partials/header') %>
-<section id="other-page">
+<section class="other-page">
 <h1><%= title %></h1>
-
-<h2>Edit a Existing Block</h2>
+<p> For all colors, please enter a number between 0 and 255.</p>
 <form action="/blocks/<%= block._id %>?_method=PUT" method="POST" autocomplete="off">
-  <label>Color - Red (0-255):
-    <input type="number" name="colorRed">
+  <label>Color - Red:
+    <input type="number" min="0" step="1" max="255" name="colorRed">
   </label><br>
-  <label>Color - Green (0-255):
-    <input type="number" name="colorGreen">
+  <label>Color - Green:
+    <input type="number" min="0" step="1" max="255" name="colorGreen">
   </label><br>
-  <label>Color - Blue (0-255):
-    <input type="number" name="colorBlue">
+  <label>Color - Blue:
+    <input type="number" min="0" step="1" max="255" name="colorBlue">
+  </label><br>
+  <label>Text Color: 
+    <select name="colorText">
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
   </label><br>
   <button type="submit">Update Block</button>
 </form>

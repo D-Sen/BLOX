@@ -13,7 +13,8 @@ function update(req, res, next) {
     const updateBlock = {
         colorRed: req.body.colorRed,
         colorGreen: req.body.colorGreen,
-        colorBlue: req.body.colorBlue
+        colorBlue: req.body.colorBlue,
+        colorText: req.body.colorText
     }
     Block.findByIdAndUpdate(req.params.id, updateBlock, { new: true}, function(err, block){
         if (err) {return next(err);} 
@@ -56,6 +57,7 @@ function create(req, res) {
     const block = new Block(req.body);
     block.save(function (err) {
         if (err) return res.redirect("/blocks/new");
-        res.redirect(`/blocks/${block._id}`);
+        //res.redirect(`/blocks/${block._id}`);
+        res.redirect("blocks/"); //blocks
     });
 }
