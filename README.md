@@ -30,7 +30,7 @@ To add a message/message text to a block, type your message in the text box then
 
 ## Feb 14th 2023 update
 
-# Major Changes
+### Major Changes
 
 * Image links can now be added 'into' blocks. The images will be reduced to 95x95 size to fit within their occupying block. Please see the warning text in the blocks'  details page regarding using messages & images in the same block.
 
@@ -39,17 +39,17 @@ To add a message/message text to a block, type your message in the text box then
 ## Feb 13th 2023 update
 
 
-# Major Changes
+### Major Changes
 
 * Added ability to choose either black or white text color for the block message
 * Image links can now be added 'into' blocks. They 
 
-# Minor Changes
+### Minor Changes
 
 * NAV BAR
     1. Added App name
     2. Centered nav bar text
-* ADD Block Page
+* ADD BLOCK Page
     1. Added descriptive text, removed some unneeded text
     2. Added min/max number estriction on back end, (numbers cant be selected out of range +/-)
     3. Stretched visual elements to fill screen
