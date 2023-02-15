@@ -41,6 +41,10 @@ const blockSchema = new Schema({
     type: String,
     enum: ['white', 'black'],
     default: 'white'
+  },  
+  imageLink: {
+    type: String,
+    required: false
   },
   messages: [messageSchema]
 }, {

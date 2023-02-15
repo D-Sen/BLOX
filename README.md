@@ -23,20 +23,29 @@ BLOX - working title - is a CRUD example app that lets you create colored blocks
 
 ## Getting Started: 
 
-Visiting the 'app' will take you to a blank board, or whatever blocks are already setup in the database. The 'All Blocks' link at the top of the page will show the main 'board'.  Logging in will enable you to Add blocks to the board, via the 'ADD BLOCK' link at the top. You may click on a block to see its details. In the blocks' details screen, you may click 'UPDATE' to change the blocks colors'. To add a message, type in text in the 'CONTENT' text box then click on 'ADD MESSAGE'. _Its recommended any added messages fit within the block size. The text box does accept and understand 'returns'._ You may also click on the 'X' next to a message to delete a message attached to a block. _Only the top-most message will be displayed on the 'BOARD'.
-In this section include the link to your deployed game and any instructions you deem important.
+Visiting the 'app' (or clicking the 'ALL BLOCKS' link at top of the page ) will take you to the BOARD, shwoing whatever blocks are already setup on the board (in the database). Logging in will enable you to Add blocks to the board, edit blocks already on the board, or add messages to those existing blocks. To add a new block to the board, click the 'ADD BLOCK' link in the top bar. You also may click on a block to see its details. On the blocks' details screen, you may click 'CHANGE BLOCK DETAILS' to change the blocks colors', change the color of any message text, or add a URL direct link to an image that display within the block. To add an image link to a block, you will need a DIRECT URL to an image. These are usually acquired by 'right-clicking' an image on a webpage and choosing 'Copy Image Link'. The images' size' will be reduced to 95x95 pixels to fit within their occupying block. Please see the warning text in the blocks' details page regarding using messages & images in the same block.
 
-## IceBox:
-* Ability to add image links to embed into block
+To add a message/message text to a block, type your message in the text box then click 'ADD MESSAGE'. _Its recommended any added messages fit within the block size. The text box does accept and understand 'returns'._ You may also click on the 'X' next to a message in the message list to delete a message attached to a block. _Only the top-most message will be displayed on the 'ALL BLOCKS' board.
 
 
-## Features added since last update
+## Feb 14th 2023 update
+
+# Major Changes
+
+* Image links can now be added 'into' blocks. The images will be reduced to 95x95 size to fit within their occupying block. Please see the warning text in the blocks'  details page regarding using messages & images in the same block.
+
+
+
+## Feb 13th 2023 update
 
 
 # Major Changes
+
 * Added ability to choose either black or white text color for the block message
+* Image links can now be added 'into' blocks. They 
 
 # Minor Changes
+
 * NAV BAR
     1. Added App name
     2. Centered nav bar text

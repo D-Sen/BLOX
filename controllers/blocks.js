@@ -14,7 +14,8 @@ function update(req, res, next) {
         colorRed: req.body.colorRed,
         colorGreen: req.body.colorGreen,
         colorBlue: req.body.colorBlue,
-        colorText: req.body.colorText
+        colorText: req.body.colorText,
+        imageLink: req.body.imageLink
     }
     Block.findByIdAndUpdate(req.params.id, updateBlock, { new: true}, function(err, block){
         if (err) {return next(err);} 

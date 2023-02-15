@@ -3,6 +3,9 @@
 <% blocks.forEach(function(b) { %>
     <a href="/blocks/<%= b._id %>">
     <div class="color-block" style="background-color: rgb(<%= b.colorRed  %>, <%= b.colorGreen  %>, <%= b.colorBlue  %>); color:<%= b.colorText %>;">
+<% if (b.imageLink) { %>
+    <img src="<%= b.imageLink %>" width=95 height=95>
+<% } %>
     <% if (b.messages.length) { %>
         <center><%= b.messages[0].content %>
         </center>

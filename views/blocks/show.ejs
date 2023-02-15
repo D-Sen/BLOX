@@ -1,7 +1,10 @@
 <%- include('../partials/header') %>
 
 <section id="show-page" class="other-page">
-<div class="color-block" style="background-color: rgb(<%= block.colorRed  %>, <%= block.colorGreen  %>, <%= block.colorBlue  %>); color:<%= block.colorText %>;">
+<div class="color-block" style="background-color: rgb(<%= block.colorRed  %>, <%= block.colorGreen  %>, <%= block.colorBlue  %>); color:<%= block.colorText %>; ">
+<% if (block.imageLink) { %>
+    <img src="<%= block.imageLink %>" width=95 height=95>
+<% } %>
 <% if (block.messages.length) { %>
         <center><%= block.messages[0].content %>
         </center>
@@ -11,14 +14,17 @@
   Green Value: <%= block.colorGreen %><br>
   Blue Value: <%= block.colorBlue %><br>
   Text Color: <%= block.colorText %><br>
+  Linked Image: <%= block.imageLink %><br>
+
 <br>
-<a href="/blocks/<%= block._id %>/edit">Change Block Colors</a><br>
+<a href="/blocks/<%= block._id %>/edit">Change Block Details</a><br>
 </div>
 
 
 <div>
 <h2>Messages</h2>
-<p><i>Only the top-most message will appear in the main block page!</i></p>
+<i>Only the top-most message will appear in the main block page!</i><br>
+<p>If an image link is included in the block, the message text will 'appear' on another block!</p>
 
 <% if(user) { %>
   <form id="add-message-form" method="POST"
