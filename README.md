@@ -30,22 +30,22 @@ In this section include the link to your deployed game and any instructions you 
 * Ability to add image links to embed into block
 
 ## Features added since lat update
-Major Changes
-Added ability to choose either black or white text color for the block message
+# Major Changes
+* Added ability to choose either black or white text color for the block message
 
 
-Minor Changes
+# Minor Changes
 * NAV BAR - Added Project name
-          Centered nav bar text
+    1. Centered nav bar text
 
 * ADD Block Page - 
-    Added descriptive text, removed some unneeded text
-    Added min/max number estriction on back end, (numbers cant be selected out of range +/-)
-    Stretched visual elements to fill screen
+    1. Added descriptive text, removed some unneeded text
+    2. Added min/max number estriction on back end, (numbers cant be selected out of range +/-)
+    3. Stretched visual elements to fill screen
 * Block details - 
-    Stretched visual elements to fill screen
-	Changed descriptive text in several places
-    Added preview of block: (color, message in block, and message text color)
-    Added 'delete' header text for list of messages
-    Added instructions for adding messages
+    1. Stretched visual elements to fill screen
+    2. Changed descriptive text in several places
+    3. Added preview of block: (color, message in block, and message text color)
+    4. Added 'delete' header text for list of messages
+    5. Added instructions for adding messages
 
