@@ -1,4 +1,4 @@
-# B*L*O*X / Color-Blocks
+# B\*L\*O\*X / Color-Blocks
 **by Domonic Senesi**
 **For SEI 1212**
 
