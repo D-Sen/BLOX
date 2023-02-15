@@ -29,7 +29,9 @@ In this section include the link to your deployed game and any instructions you 
 ## IceBox:
 * Ability to add image links to embed into block
 
+
 ## Features added since last update
+
 
 # Major Changes
 * Added ability to choose either black or white text color for the block message
