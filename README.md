@@ -2,9 +2,8 @@
 **by Domonic Senesi**
 **For SEI 1212**
 
-### Project Link
+### Link to App
 (https://proj2-blox.herokuapp.com/blocks)
-
 
 ### Trello
 (https://trello.com/b/kjTrbDmO/proj2-blox)
@@ -28,7 +27,25 @@ Visiting the 'app' will take you to a blank board, or whatever blocks are alread
 In this section include the link to your deployed game and any instructions you deem important.
 
 ## IceBox:
-* Fix formatting on Block details & Add Block pages.
-* Display the block color when viewing a blocks' details page.
-* Limit the number of characters a user is able to add to a message.
-* Formatting text of messages that appear in the blocks.
+* Ability to add image links to embed into block
+
+## Features added since lat update
+Major Changes
+Added ability to choose either black or white text color for the block message
+
+
+Minor Changes
+* NAV BAR - Added Project name
+          Centered nav bar text
+
+* ADD Block Page - 
+    Added descriptive text, removed some unneeded text
+    Added min/max number estriction on back end, (numbers cant be selected out of range +/-)
+    Stretched visual elements to fill screen
+* Block details - 
+    Stretched visual elements to fill screen
+	Changed descriptive text in several places
+    Added preview of block: (color, message in block, and message text color)
+    Added 'delete' header text for list of messages
+    Added instructions for adding messages
+
