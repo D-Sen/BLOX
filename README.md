@@ -29,20 +29,20 @@ In this section include the link to your deployed game and any instructions you 
 ## IceBox:
 * Ability to add image links to embed into block
 
-## Features added since lat update
+## Features added since last update
+
 # Major Changes
 * Added ability to choose either black or white text color for the block message
 
-
 # Minor Changes
-* NAV BAR - Added Project name
-    1. Centered nav bar text
-
-* ADD Block Page - 
+* NAV BAR
+    1. Added App name
+    2. Centered nav bar text
+* ADD Block Page
     1. Added descriptive text, removed some unneeded text
     2. Added min/max number estriction on back end, (numbers cant be selected out of range +/-)
     3. Stretched visual elements to fill screen
-* Block details - 
+* Block details 
     1. Stretched visual elements to fill screen
     2. Changed descriptive text in several places
     3. Added preview of block: (color, message in block, and message text color)
