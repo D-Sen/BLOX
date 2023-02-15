@@ -1,4 +1,4 @@
-# BLOX / Color-Blocks (working title)
+# B*L*O*X / Color-Blocks
 **by Domonic Senesi**
 **For SEI 1212**
 
