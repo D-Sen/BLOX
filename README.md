@@ -8,10 +8,6 @@
 
 B\*L\*O\*X is a CRUD example app that lets you create colored blocks with textual messages and/or hyperlinked images. You can create any number of colored blocks and attach a near unlimited amount of messages to them. Conceived as a 'drawing program', it has a wide range of possible uses, including creating a embedded post-it not system, making and hiding hidden messages, and recreateing board games! The simple design belies a complexity that is only limited by your imagination. It requires a Google account to authenticate to login and create a block or attach a message to a block.
 
-## Screenshot(s): 
-
-![Screenshot](https://github.com/D-Sen/proj2-blox/blob/main/Screenshot-1.png) 
-
 ## Technologies Used: 
 * JavaScript (Node)
 * Express 
