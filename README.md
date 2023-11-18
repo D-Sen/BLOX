@@ -1,5 +1,6 @@
 # B\*L\*O\*X
 **by Domonic Senesi**
+
 **Made for General Assembly Full Stack SEI 1212 Boot Camp**
 
 ### Link to App
